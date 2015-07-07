@@ -1,5 +1,5 @@
 {
-  "name": "ember-cli-simple-auth-oauth2-custom-mars",
+  "name": "ember-cli-simple-auth-input-oauth2",
   "author": "Marco Otte-Witte",
   "license": "MIT",
   "version": "0.8.0",
@@ -16,9 +16,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/fuse-mars/ember-cli-simple-auth-oauth2.git"
+    "url": "https://github.com/fuse-mars/ember-cli-simple-auth-input-oauth2.git"
   },
-  "homepage": "https://github.com/simplabs/ember-cli-simple-auth-oauth2",
+  "homepage": "https://github.com/fuse-mars/ember-cli-simple-auth-input-oauth2",
   "dependencies": {
     "ember-cli-simple-auth": "0.8.0"
   }
