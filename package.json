@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/fuse-mars/ember-cli-simple-auth-input-oauth2",
   "dependencies": {
-    "ember-cli-simple-auth": "0.8.0"
+    "ember-cli-simple-auth-input": "0.8.0"
   }
 }
