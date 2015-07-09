@@ -9,8 +9,8 @@ Addon.
 **Ember Simple Auth OAuth 2.0 requires at least Ember CLI 0.0.44.**
 
 ```
-ember install ember-cli-simple-auth
-ember install ember-cli-simple-auth-oauth2
+ember install ember-cli-simple-auth-input
+ember install ember-cli-simple-auth-oauth2-input
 ```
 
 in your Ember CLI project's root.
@@ -18,17 +18,17 @@ in your Ember CLI project's root.
 If you're using Ember CLI 0.2.2 or older, run
 
 ```
-ember install:addon ember-cli-simple-auth
-ember install:addon ember-cli-simple-auth-oauth2
+ember install:addon ember-cli-simple-auth-input
+ember install:addon ember-cli-simple-auth-input-oauth2
 ```
 
 If you're using Ember CLI 0.1.4 or older, run
 
 ```
-npm install --save-dev ember-cli-simple-auth
-ember generate ember-cli-simple-auth
-npm install --save-dev ember-cli-simple-auth-oauth2
-ember generate ember-cli-simple-auth-oauth2
+npm install --save-dev ember-cli-simple-auth-input
+ember generate ember-cli-simple-auth-input
+npm install --save-dev ember-cli-simple-auth-input-oauth2
+ember generate ember-cli-simple-auth-input-oauth2
 ```
 
 ### Configuration
@@ -39,7 +39,19 @@ defined in `config/environment.js`. Configure values for
 
 ```js
 ENV['simple-auth-oauth2'] = {
-  serverTokenEndpoint: 'http://path.com/to/your/access_token/end_point'
+  serverTokenEndpoint: 'http://path.com/to/your/access_token/end_point',
+  serverTokenRevocationEndpoint: 'http://path.com/to/your/access_token/revocation_point',
+  refreshAccessTokens: false, //specify if you want to to periodically request new tokens
+  authenticationInputFormat: { // data format expected by the authenticating server - these attributes are used to collect input data sent to the authentication server
+    headers: ['app-id', 'secretId'],
+    formAttributes: [] //ex: ['grant_type', 'username', 'password']
+  },
+  authenticationResponseFormat: { //data format returned by the server - *required*
+  //these values tells the authentication library how to token and expiration date from the server response
+    expires_in: '', //ex: 'expires_in',
+    refresh_token: '', //ex: 'refresh_token.value',
+    access_token: '' //ex: 'access_token.value'
+  }
 };
 ```
 
