@@ -56,4 +56,4 @@ ENV['simple-auth-oauth2'] = {
 ```
 
 For the actual Ember Simple Auth repository see
-https://github.com/simplabs/ember-simple-auth
+https://github.com/simplabs/ember-simple-auth-input
